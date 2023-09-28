@@ -1,0 +1,104 @@
+:root {
+    --text-color: 253, 211, 211;
+    --background-color: 10,0,0;
+    --primary-color: 175, 7, 7;
+    --secondary-color: 49, 2, 2;
+    --accent-color: 10, 245, 245
+}
+.accordion{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(var(--background-color));
+}
+.backBtn{
+  position: absolute;
+  color: rgb(var(--primary-color)) ;
+  left: 30px;
+  top: 30px;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.backBtn:hover{
+  color: rgb(var(--accent-color)) ;
+}
+.projectsButton{
+  cursor: pointer;
+  position: absolute;
+  color: rgb(var(--primary-color)) ;
+  right: 30px;
+  top: 50%;
+  font-size: 3rem;
+}
+.projectsButton:hover{
+  color: rgb(var(--accent-color)) ;
+}
+
+.tab{
+  box-shadow: 0 0 0.5rem rgb(var(--primary-color));
+  height: 50%;
+  background-color: rgb(var(--secondary-color));
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+.tab:first-child{
+  border-radius: 1rem 0 0 1rem;
+}
+.tab:last-child{
+  border-radius: 0 1rem 1rem 0;
+}
+.tab:last-child .tab__content:last-child{
+  border-radius: 0 1rem 1rem 0;
+}
+.tabCheckbox {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.tab__content {
+  color: rgb(var(--text-color));
+  background-color: rgb(var(--primary-color));
+  max-width: 0;
+  overflow: hidden;
+  transition: all 0.35s;
+  box-shadow: inset 0 0 1rem rgb(var(--secondary-color));
+  height: 100%;
+  writing-mode: horizontal-tb;
+  text-orientation: sideways;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tabCheckbox:checked ~ .tab__content {
+  max-width: 20rem;
+}
+
+.tab__label {
+  display: flex;
+
+  color: rgb(var(--text-color));
+  cursor: pointer;
+  justify-content: space-between;
+  padding: 1rem;
+  letter-spacing: -0.1rem;
+}
+
+.tab__label::before {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transform: rotate(90deg);
+  transition: all 0.35s;
+}
+.tabCheckbox:checked + .tab__label::before {
+  transform: rotate(0deg);
+}
+.tab__content p {
+  margin: 0;
+  padding: 1rem;
+}
+

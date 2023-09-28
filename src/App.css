@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "WorkSans";
+  src: local("WorkSans"),
+    url("./assets/WorkSans-Regular.ttf") format("truetype");
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: rgb(var(--background-color));
+}
+

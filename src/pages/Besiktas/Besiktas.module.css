@@ -1,0 +1,169 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;    
+}
+
+.selector{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    bottom: 0px;
+    left: 0px;
+}
+
+
+.logos {
+    min-width: 100%; 
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.input {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 5%;
+    opacity: 0.15;
+    transition: opacity 1s;    
+}  
+
+.input:focus{
+    border: 3px solid black;
+    outline: none;
+    opacity: 1;
+}
+
+.input:hover{
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.container .logo-front {
+    position: absolute;
+    z-index: 2;
+    max-width: 20%;
+}
+
+.logo-faders {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 1500ms;
+    pointer-events: none;
+}
+
+
+.logo-fader {
+    position: absolute;
+    max-width: 20%;
+}
+
+.logo-fader:nth-child(4n+1) {
+    animation: fade-left 4s linear infinite;
+}
+
+.logo-fader:nth-child(4n+2) {
+    animation: fade-right 4s linear infinite;
+}
+
+.logo-fader:nth-child(4n+3) {
+    animation: fade-up 4s linear infinite;
+}
+
+.logo-fader:nth-child(4n+4) {
+    animation: fade-down 4s linear infinite;
+}
+
+.logo-fader:is(:nth-child(15), :nth-child(16), :nth-child(9), :nth-child(10)) {
+    animation-delay: 1s;
+}
+
+.logo-fader:is(:nth-child(5), :nth-child(6), :nth-child(11), :nth-child(12)) {
+    animation-delay: 2s;
+}
+
+.logo-fader:is(:nth-child(7), :nth-child(8), :nth-child(13), :nth-child(14)) {
+    animation-delay: 3s;
+}
+
+
+@keyframes fade-left {
+    0% {
+        scale: 1;
+        translate: 0%;
+        opacity: 1;
+    }
+    100% {
+        scale: 0.7;
+        translate: -180%;
+        opacity: 0;
+    }
+}
+
+@keyframes fade-right {
+    0%{
+        scale: 1;
+        translate: 0%;
+        opacity: 1;
+
+    }
+    100% {
+        scale: 0.7;
+        translate: 180%;
+        opacity: 0;
+    }
+}
+
+@keyframes fade-up {
+    0% {
+        scale: 1;
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    100% {
+        scale: 0.7;
+        transform: translateY(-180%);
+        opacity: 0;
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        scale: 1;
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    100% {
+        scale: 0.7;
+        transform: translateY(180%);
+        opacity: 0;
+    }
+}
